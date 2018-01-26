@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="8dp"
+android:paddingLeft="8dp"
+android:paddingRight="8dp"
+android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/itemTitle"
+        android:layout_width="140dp"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/itemValue"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/driven_wheels"
+        android:textAllCaps="true"
+        android:textColor="@color/colorResultTitle"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/itemValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toEndOf="@+id/itemTitle"
+        android:layout_toRightOf="@+id/itemTitle"
+        android:text="@string/_4_2"
+        android:textColor="@color/colorResultValue"
+        android:textSize="18sp" />
+</android.widget.RelativeLayout>

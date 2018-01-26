@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_back"
+    tools:context="com.mycarster.carster.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/emailImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="28dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="19dp"
+                android:contentDescription="@string/emailimage"
+                app:srcCompat="@drawable/email_gray" />
+
+            <EditText
+                android:id="@+id/userName"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_alignTop="@+id/emailImage"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/emailImage"
+                android:layout_toRightOf="@+id/emailImage"
+                android:ems="10"
+                android:hint="@string/user_name" />
+
+            <ImageView
+                android:id="@+id/passwordImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignLeft="@+id/emailImage"
+                android:layout_alignStart="@+id/emailImage"
+                android:layout_below="@+id/emailImage"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/passwordimage"
+                app:srcCompat="@drawable/password_gray" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_above="@+id/loginButton"
+                android:layout_alignLeft="@+id/userName"
+                android:layout_alignStart="@+id/userName"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword" />
+
+            <ImageButton
+                android:id="@+id/loginButton"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:layout_width="180dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/passwordImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="64dp"
+                android:background="#00000000"
+                android:contentDescription="@string/loginbutton"
+                android:onClick="LoginClicked"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/login_button2" />
+
+            <Button
+                android:id="@+id/forgotButton"
+                android:layout_width="180dp"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="19dp"
+                android:background="@android:color/transparent"
+                android:onClick="forgotPass"
+                android:text="@string/forgot_password"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:typeface="normal" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:id="@+id/visitIntorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/visitWebsiteButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="7dp"
+                android:text="@string/registerText"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/visitWebsiteButton"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/textView6"
+                android:layout_toStartOf="@+id/textView6"
+                android:background="@android:color/transparent"
+                android:onClick="visitWebsite"
+                android:text="@string/visit_website"
+                android:textAlignment="textEnd"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+                android:typeface="normal"
+                android:layout_gravity="end" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/visitWebsiteButton"
+                android:layout_alignBottom="@+id/visitWebsiteButton"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/textView6"
+                android:layout_toRightOf="@+id/textView6"
+                android:background="@android:color/transparent"
+                android:onClick="gotoRegister"
+                android:text="@string/register"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+                android:typeface="normal"
+                tools:layout_editor_absoluteX="167dp"
+                tools:layout_editor_absoluteY="591dp"
+                android:layout_gravity="start" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:contentDescription="@string/logo_image"
+            app:srcCompat="@drawable/logo" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
