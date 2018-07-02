@@ -1,30 +1,44 @@
 package com.mycarster.carster;
 
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.Display;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import static android.app.PendingIntent.getActivity;
 
 /**
  * Created by Administrator on 2016/5/25.
  */
 public class RectLayer extends ImageView {
+    MainActivity mainactivity;
     public RectLayer(Context context) {
         this(context, null);
+        mainactivity = (MainActivity) context;
     }
 
     public RectLayer(Context context, @Nullable AttributeSet attrs)
     {
         this(context, attrs, 0);
+        mainactivity = (MainActivity) context;
     }
 
     public RectLayer(Context context, @Nullable AttributeSet attrs, int defStyleAttr)
     {
         super(context, attrs, defStyleAttr);
+        mainactivity = (MainActivity) context;
         //this.setAlpha(0.3f);
     }
 
@@ -48,8 +62,18 @@ public class RectLayer extends ImageView {
         p.setColor(Color.RED);
         p.setAlpha(255);
         p.setStrokeWidth(3);
-        int lineVerticalPos = rect.top + (rect.height() >> 1);
-        canvas.drawLine(rect.left + 10, lineVerticalPos, rect.right - 10, lineVerticalPos, p);
+
+        if(mainactivity.lastOrientation == 0) {  //is portrate
+//            Log.d("startOrientation","ORIENTATION_PORTRAIT" );
+//            Toast.makeText(mainactivity, "Redraw_ORIENTATION_PORTRAIT", Toast.LENGTH_SHORT).show();
+            int lineVerticalPos = rect.top + (rect.height() >> 1);
+            canvas.drawLine(rect.left + 10, lineVerticalPos, rect.right - 10, lineVerticalPos, p);
+        }else{
+//            Log.d("startOrientation","ORIENTATION_LANDSPACE" );
+//            Toast.makeText(mainactivity, "Redraw_ORIENTATION_LANDSPACE", Toast.LENGTH_SHORT).show();
+            int lineHorizontalPos = rect.left + (rect.width() >> 1);
+            canvas.drawLine(lineHorizontalPos, rect.top + 10, lineHorizontalPos, rect.bottom - 10, p);
+        }
 
         p.setColor(Color.WHITE);
         p.setStrokeWidth(3);

@@ -8,8 +8,9 @@ import android.view.SurfaceView;
 
 import java.io.IOException;
 
-/**
+/*
  * Created by Administrator on 2016/5/25.
+ *
  */
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
     private static final String TAG = "CameraPreview";

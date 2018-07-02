@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Carster.iml" filepath="$PROJECT_DIR$/Carster.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DynamsoftBarcodeReader/DynamsoftBarcodeReader.iml" filepath="$PROJECT_DIR$/DynamsoftBarcodeReader/DynamsoftBarcodeReader.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>

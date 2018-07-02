@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Carster</string>
     <string name="title">Capture VIN Number</string>
-    <string name="scan_hint">Align the barcode within the square</string>
+    <string name="scan_hint">Align barcode within square</string>
     <string name="flash_off">Flash off</string>
     <string name="about">Dynamsoft Barcode Reader Mobile App Demo (Dynamsoft Barcode Reader SDK v4.2.0)\r\n© 2016 Dynamsoft All rights reserved.\r\n\r\nIntegrate Barcode Reader Functionality into your own Mobile App?\r\n</string>
     <string name="download"></string>

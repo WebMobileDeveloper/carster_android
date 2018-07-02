@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,11 +18,25 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageButton2"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             android:text="@string/title"
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="13dp"
+            android:layout_marginRight="13dp"
+            android:background="@android:color/transparent"
+            android:onClick="closeApp"
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
     </RelativeLayout>
 
@@ -40,18 +55,47 @@
             android:layout_height="match_parent"
             android:id="@+id/rectLayer"/>
         <LinearLayout
-            android:orientation="vertical" android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical">
-            <TextView
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/scan_hint"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/textView2"
-                android:gravity="center"
-                android:layout_weight="2"
-                android:textColor="@color/white"/>
+                android:layout_weight="2">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivFlash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:contentDescription=" Turn on/off flash"
+                        android:onClick="setFlash"
+                        android:src="@mipmap/flashlight_turn_on_icon"/>
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="@string/scan_hint"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/white" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -82,25 +126,6 @@
                 android:layout_weight="3"
                 android:layout_gravity="center"
                 android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ivFlash"
-                    android:src="@mipmap/flash_off"
-                    android:layout_gravity="center"
-                    android:contentDescription=" Turn on/off flash"
-                    android:onClick="setFlash"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:clickable="true"
-                    android:text="@string/flash_off"
-                    android:onClick="setFlash"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:textColor="@color/white"
-                    android:id="@+id/tvFlash"/>
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>

@@ -24,9 +24,11 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.provider.Settings.Secure;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private String android_id;
     EditText nameField;
     EditText passField;
     ProgressDialog pd;
@@ -48,9 +50,9 @@ public class LoginActivity extends AppCompatActivity {
         //================ restore login info
         SharedPreferences sp1=this.getSharedPreferences("carster_login", MODE_PRIVATE);
 
-        String unm=sp1.getString("Unm", null);
+        String unm = sp1.getString("Unm", null);
         String pass = sp1.getString("Psw", null);
-
+        android_id = Secure.getString(this.getContentResolver(), Secure.ANDROID_ID);
         if (unm != null){
             nameField.setText(unm);
             passField.setText(pass);
@@ -59,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
             pd.setProgressStyle(android.R.style.Widget_ProgressBar_Small);
             pd.show();
         }
+
 
 
     }
@@ -155,6 +158,8 @@ public class LoginActivity extends AppCompatActivity {
                 Map<String, String> MyData = new HashMap<String, String>();
                 MyData.put("user_login", user_name); //Add the data you'd like to send to the server.
                 MyData.put("user_pass", password); //Add the data you'd like to send to the server.
+                MyData.put("dev_id", android_id); //Add the data you'd like to send to the server.
+                MyData.put("dev_type", "android"); //Add the data you'd like to send to the server.
                 return MyData;
             }
         };
